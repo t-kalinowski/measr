@@ -312,7 +312,7 @@ measrfit <- S7::new_class(
     ),
     model = S7::new_property(
       class = S7::class_any,
-      default = quote(list()),
+      default = list(),
       setter = function(self, value) {
         if (!is.null(self@model)) {
           stop("@model is read-only", call. = FALSE)
