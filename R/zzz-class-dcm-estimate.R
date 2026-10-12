@@ -312,7 +312,7 @@ measrfit <- S7::new_class(
     ),
     model = S7::new_property(
       class = S7::class_any,
-      default = list(),
+      default = quote(list()),
       setter = function(self, value) {
         if (!is.null(self@model)) {
           stop("@model is read-only", call. = FALSE)
@@ -407,6 +407,7 @@ measrfit <- S7::new_class(
 #' should use [dcm_estimate()].
 #'
 #' @param model_spec The model specification used to estimate the model.
+#'   Defaults to a new [dcmstan::dcm_specification()] object.
 #' @param data The data used to estimate the model.
 #' @param stancode The model code in *Stan* language.
 #' @param method The method used to fit the model.

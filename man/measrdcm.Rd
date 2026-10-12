@@ -5,7 +5,7 @@
 \title{S7 class for measrdcm objects}
 \usage{
 measrdcm(
-  model_spec = NULL,
+  model_spec = dcmstan::dcm_specification(),
   data = list(),
   stancode = character(0),
   method = stanmethod(),
@@ -21,7 +21,8 @@ measrdcm(
 )
 }
 \arguments{
-\item{model_spec}{The model specification used to estimate the model.}
+\item{model_spec}{The model specification used to estimate the model.
+Defaults to a new \code{\link[dcmstan:dcm_specification]{dcmstan::dcm_specification()}} object.}
 
 \item{data}{The data used to estimate the model.}
 
